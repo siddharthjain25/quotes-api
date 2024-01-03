@@ -1,0 +1,45 @@
+<%- include('partials/header') %>
+        <section class="container forms">
+            <div class="form">
+                <div class="form-content">
+                    <header>Signup</header>
+                  <div class="form-link">
+                 <b><div id="errorMessage" style="color: red;"></div></b>
+                  </div>
+                    <form action="/register" method="POST">
+                      <div class="field input-field">
+                            <input type="text" name="name" placeholder="Name" required>
+                        </div>
+                        <div class="field input-field">
+                            <input type="email" name="username" placeholder="Email" required>
+                        </div>
+                         <div class="field input-field">
+                            <input type="password" placeholder="Password" name="password" class="password" minlength="8" required>
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div>
+
+                        <div class="media-options">
+                            <a><button type="submit" class="button-30" role="button">Sign Up</button></a>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="line"></div>
+                
+                <div class="form-link">
+                        <span>Already have an account? <a href="/login" class="link signup-link" style="color: purple;"><b>Login</b></a></span>
+                    </div>
+              <div class="form-link">
+                        <span>Return <a href="/" class="link signup-link" style="color: purple;"><b>Home</b></a></span>
+                    </div>
+                <div class="media-options">
+                    <a href="/auth/google" class="button-30"><img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png" style="height: 25px;margin-right: 20px">Login with Google</a>
+                </div>
+
+                <div class="media-options">
+                    <a href="/auth/discord" class="button-30"><img src="https://www.freepnglogos.com/uploads/discord-logo-png/discord-logo-logodownload-download-logotipos-1.png" style="height: 25px;margin-right: 20px">Login with Discord</a>
+                </div>
+
+            </div>
+        </section>
+<%- include('partials/footer') %>

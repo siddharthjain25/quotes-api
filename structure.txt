@@ -1,0 +1,19 @@
+CREATE TABLE `users` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+        `verified` INT,
+	`name` CHAR(255),
+	`username` CHAR(255),
+	`password` CHAR(255),
+	`googleId` CHAR(255),
+	`discordId` CHAR(255),
+	`apiKey` CHAR(255),
+	`profilePic` CHAR(255),
+	`avatar` CHAR(255),
+	`salt` CHAR(255),
+	`hash` CHAR(255),
+	UNIQUE KEY `id` (`id`) USING BTREE,
+UNIQUE KEY `username` (`username`) USING BTREE,
+UNIQUE KEY `googleId` (`googleId`) USING BTREE,
+UNIQUE KEY `discordId` (`discordId`) USING BTREE,
+	PRIMARY KEY (`id`,`username`)
+);

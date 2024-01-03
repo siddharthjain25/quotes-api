@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="tXstDIIblAO9bbrhRlVGCCoAIvSX1Sin5GfkeKvBLCc" />
+  <meta name="description" content="A free api to get quotes.">
+  <meta name="keywords" content="quotes, uzumaki, naruto, onepiece, ,quote, api, anime, rapid api, ninja, zen, zen quotes api, aen quotes, anime quotes, motivational quotes, motivation, motivational, Quotes, API, Quotes API, Siddharth, Siddharth Jain, HTML, CSS, JavaScript">
+  <meta name="author" content="Siddharth Jain">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="icon" type="image/x-icon" href="css/logo.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5024307741576694"
+     crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-5024307741576694">
+  <title>Quotes API</title>
+</head>
+<body>
+  <div class="header">
+  <h1 class="text-3xl font-semibold log"><a href="/"><img class="pro" src="css/logo.png"></a>Quotes API Documentation</h1>
+</div>
+
+<div class="container">
+  <div class="login-register">
+    <% if(auth){ %>
+        <% if(profilePic){ %>
+          <div class="proof">
+            <div class="proof2">
+              <a href="/profile"><img class="pro" src="<%= profilePic %>"></a>
+            </div>
+            <span>|</span>
+            <div class="proof3">
+            <a href="/logout" ><button class="button-30" role="button">Logout</button></a>
+            </div>
+            <span>|</span>
+            <a href="/contact" ><button class="button-30">contact</button></a>
+          </div>
+        <% }else if(avatar){ %>
+          <div class="proof">
+            <div class="proof2">
+              <a href="/profile"><img class="pro" src="https://cdn.discordapp.com/avatars/<%= discordId %>/<%= avatar %>"></a>
+            </div>
+            <span>|</span>
+            <div class="proof3">
+            <a href="/logout" ><button class="button-30" role="button">Logout</button></a>
+            </div>
+            <span>|</span>
+            <a href="/contact" ><button class="button-30">contact</button></a>
+          </div>
+        <% }else{ %>
+            <div class="proof">
+            <div class="proof2">
+              <a href="/profile" style="font-size:30px;font-weight:bold;"><%= username %></a>
+            </div>
+            <span>|</span>
+            <div class="proof3">
+            <a href="/logout" ><button class="button-30" role="button">Logout</button></a>
+            </div>
+            <span>|</span>
+            <a href="/contact" ><button class="button-30">contact</button></a>
+          </div>
+          <% } %>
+      <% }else{ %>
+        <div class="proof">
+            <a href="/login"><button class="button-30">Login</button></a>
+            <span>|</span>
+            <a href="/register"><button class="button-30">Register</button></a>
+            <span>|</span>
+            <a href="/contact" ><button class="button-30">contact</button></a>
+        </div>
+      <% } %>
+  </div>
+
+  <div class="section">
+    <h2 class="text-2xl font-semibold">Before using the api.</h2>
+    <p class="text-gray-700">Login and generate your apiKey.</p>
+
+    <h3 class="text-xl font-semibold">All Endpoints</h3>
+    <code class="bg-gray-200">
+      GET /quote/random
+    </code>
+   <div></div>
+    <code class="bg-gray-200">
+      GET /quote/author-name
+    </code>
+    <h3 class="text-xl font-semibold">Parameters</h3>
+    <p class="text-gray-700">apiKey required.</p>
+    
+    <h3 class="text-xl font-semibold">NOTE</h3>
+    <p class="text-gray-700">Author name and apiKey parameters are case sensitive.</p>
+  </div>      
+  
+  <div class="section">
+    <h2 class="text-2xl font-semibold">Endpoint 1: /quote/random</h2>
+    <p class="text-gray-700">This endpoint will get random quote.</p>
+
+    <h3 class="text-xl font-semibold">HTTP Request</h3>
+    <code class="bg-gray-200">
+      GET /quote/random
+    </code>
+
+    <h3 class="text-xl font-semibold">Parameters</h3>
+    <p class="text-gray-700">apiKey required.</p>
+    <h3 class="text-xl font-semibold">Example</h3>
+    <p class="text-gray-700">https://quotesapi25.glitch.me/quote/random?apiKey=YOUR_apiKey</p>
+    <h3 class="text-xl font-semibold">Response</h3>
+    <code class="bg-gray-200">
+      {
+        "quoteText": "By believing passionately in something that does not yet exist, we create it.",
+        "quoteAuthor": "Nikos Kazantzakis"
+      }
+    </code>
+  </div>
+
+  <div class="section">
+    <h2 class="text-2xl font-semibold">Endpoint 2: /quote/author_name</h2>
+    <p class="text-gray-700">This endpoint will get random quote of the specified author.</p>
+
+    <h3 class="text-xl font-semibold">HTTP Request</h3>
+    <code class="bg-gray-200">
+      GET /quote/author-name
+    </code>
+
+    <h3 class="text-xl font-semibold">Parameters</h3>
+    <p class="text-gray-700">apiKey required.</p>
+    <h3 class="text-xl font-semibold">Example</h3>
+    <p class="text-gray-700">https://quotesapi25.glitch.me/quote/Buddha?apiKey=YOUR_apiKey</p>
+
+    <h3 class="text-xl font-semibold">Response</h3>
+    <code class="bg-gray-200">
+      {
+          "quoteText": "You will not be punished for your anger, you will be punished by your anger.",
+          "quoteAuthor": "Buddha"
+      }
+    </code>
+    <h3 class="text-xl font-semibold">NOTE</h3>
+    <p class="text-gray-700">Author name is case sensitive</p>
+  </div>
+</div>
+
+<div id="footer">
+    <script>
+        document.getElementById('footer').innerHTML =' Created with ❤️ by Siddharth Jain ' + '&copy; ' + new Date().getFullYear();
+    </script>
+</div>
+</body>
+</html>

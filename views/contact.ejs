@@ -1,0 +1,40 @@
+<%- include('partials/header') %>
+
+<section class="container forms">
+            <div class="form login">
+                <div class="form-content">
+                    <header>Contact</header>
+                  
+                    <div class="form-link">
+                  <b><div id="errorMessage" style="color: red;"></div></b>
+                  </div>
+                  
+                    <form action="/contact" method="POST">
+                        <div class="field input-field">
+                            <input type="name" placeholder="Name" name="name" class="input" required>
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="email" name="email" placeholder="Email" required>
+                        </div>
+                      
+                      <div class="field input-field">
+                            <input type="text" name="problem" placeholder="Problem" required>
+                        </div>
+
+                        <div class="media-options">
+                            <a><button type="submit" class="button-30" role="button">Submit</button></a>
+                        </div>
+                    </form>
+                    
+                  <div class="line"></div>
+                  
+                    <div class="form-link">
+                        <span><a href="/" class="link signup-link"><b>Home</b></a></span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+  
+<%- include('partials/footer') %>

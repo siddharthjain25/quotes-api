@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/x-icon" href="css/logo.png">
+  <title>Quotes API</title>  
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <div class="container">
+    <i class="fas fa-key fa-6x"></i>
+    <% if (name){ %>
+      <% if (profilePic){ %>
+        <div class="proof"><img class="pro" src="<%= profilePic %>"><h1><%= name %>!</h1></div>
+      <% }else if(avatar){ %>
+        <div class="proof"><img class="pro" src="https://cdn.discordapp.com/avatars/<%= discordId %>/<%= avatar %>"><h1><%= name %>!</h1></div>
+      <% }else{ %>
+        <div class="proof"><h1><%= name %>!</h1></div>
+      <% } %>
+    <% } %>
+      <div class="empty"></div>
+      <% if (apiKey) { %>
+      <h3>Your API Key: <%= apiKey %></h3>
+      <form action="/generate-api-key" method="post">
+      <button class="button-30" type="submit">Regenerate API Key</button>
+      </form>
+    </p>
+    <% } else { %>
+          <form id="generateApiKeyForm" action="/generate-api-key" method="post">
+          <button class="button-30" type="submit">Generate API Key</button>
+          </form>
+    <% } %>
+    
+    <hr>
+    <a href="/logout" ><button class="button-30" role="button">Logout</button></a>
+    <a href="/" ><button class="button-30" role="button">Home</button></a>
+    <form action="/delete" method="POST">
+      <a><button class="button-30" role="button">Delete account</button></a>
+    </form>
+  </div>
+</div>
+</body>
+</html>
