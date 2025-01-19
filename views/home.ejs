@@ -8,7 +8,6 @@
   <meta name="author" content="Siddharth Jain">
   <link rel="stylesheet" href="css/home.css">
   <link rel="icon" type="image/x-icon" href="css/logo.png">
-  <meta name="google-adsense-account" content="ca-pub-5024307741576694">
   <title>Quotes API</title>
 </head>
 <body>
@@ -17,60 +16,7 @@
 </div>
 
 <div class="container">
-  <div class="login-register">
-    <% if(auth){ %>
-        <% if(profilePic){ %>
-          <div class="proof">
-            <div class="proof2">
-              <a href="/profile"><img class="pro" src="<%= profilePic %>"></a>
-            </div>
-            <span>|</span>
-            <div class="proof3">
-            <a href="/logout" ><button class="button-30" role="button">Logout</button></a>
-            </div>
-            <span>|</span>
-            <a href="/contact" ><button class="button-30">contact</button></a>
-          </div>
-        <% }else if(avatar){ %>
-          <div class="proof">
-            <div class="proof2">
-              <a href="/profile"><img class="pro" src="https://cdn.discordapp.com/avatars/<%= discordId %>/<%= avatar %>"></a>
-            </div>
-            <span>|</span>
-            <div class="proof3">
-            <a href="/logout" ><button class="button-30" role="button">Logout</button></a>
-            </div>
-            <span>|</span>
-            <a href="/contact" ><button class="button-30">contact</button></a>
-          </div>
-        <% }else{ %>
-            <div class="proof">
-            <div class="proof2">
-              <a href="/profile" style="font-size:30px;font-weight:bold;"><%= username %></a>
-            </div>
-            <span>|</span>
-            <div class="proof3">
-            <a href="/logout" ><button class="button-30" role="button">Logout</button></a>
-            </div>
-            <span>|</span>
-            <a href="/contact" ><button class="button-30">contact</button></a>
-          </div>
-          <% } %>
-      <% }else{ %>
-        <div class="proof">
-            <a href="/login"><button class="button-30">Login</button></a>
-            <span>|</span>
-            <a href="/register"><button class="button-30">Register</button></a>
-            <span>|</span>
-            <a href="/contact" ><button class="button-30">contact</button></a>
-        </div>
-      <% } %>
-  </div>
-
   <div class="section">
-    <h2 class="text-2xl font-semibold">Before using the api.</h2>
-    <p class="text-gray-700">Login and generate your apiKey.</p>
-
     <h3 class="text-xl font-semibold">All Endpoints</h3>
     <code class="bg-gray-200">
       GET /quote/random
@@ -79,11 +25,9 @@
     <code class="bg-gray-200">
       GET /quote/author-name
     </code>
-    <h3 class="text-xl font-semibold">Parameters</h3>
-    <p class="text-gray-700">apiKey required.</p>
     
     <h3 class="text-xl font-semibold">NOTE</h3>
-    <p class="text-gray-700">Author name and apiKey parameters are case sensitive.</p>
+    <p class="text-gray-700">Author name is case sensitive.</p>
   </div>      
   
   <div class="section">
@@ -95,10 +39,8 @@
       GET /quote/random
     </code>
 
-    <h3 class="text-xl font-semibold">Parameters</h3>
-    <p class="text-gray-700">apiKey required.</p>
     <h3 class="text-xl font-semibold">Example</h3>
-    <p class="text-gray-700">https://quotes.xspark.live/quote/random?apiKey=YOUR_apiKey</p>
+    <p class="text-gray-700">https://quotes.xspark.live/quote/random</p>
     <h3 class="text-xl font-semibold">Response</h3>
     <code class="bg-gray-200">
       {
@@ -114,13 +56,11 @@
 
     <h3 class="text-xl font-semibold">HTTP Request</h3>
     <code class="bg-gray-200">
-      GET /quote/author-name
+      GET /quote/author_name
     </code>
 
-    <h3 class="text-xl font-semibold">Parameters</h3>
-    <p class="text-gray-700">apiKey required.</p>
     <h3 class="text-xl font-semibold">Example</h3>
-    <p class="text-gray-700">https://quotes.xspark.live/quote/Buddha?apiKey=YOUR_apiKey</p>
+    <p class="text-gray-700">https://quotes.xspark.live/quote/Buddha</p>
 
     <h3 class="text-xl font-semibold">Response</h3>
     <code class="bg-gray-200">
@@ -136,7 +76,7 @@
 
 <div id="footer">
     <script>
-        document.getElementById('footer').innerHTML =' Created with ❤️ by Siddharth Jain ' + '&copy; ' + new Date().getFullYear();
+        document.getElementById('footer').innerHTML =' Created with ❤️ by <a href="https://siddharth.is-a.dev" target="_blank">Siddharth Jain</a> ' + '&copy; ' + new Date().getFullYear();
     </script>
 </div>
 </body>
